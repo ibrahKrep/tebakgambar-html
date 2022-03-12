@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz2</title>
+    <style type="text/css" media="all">
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #tombol {
+        background-color: #0082dc;
+        font-size: 16px;
+        padding: 9px;
+        border-radius: 6px;
+        border: none;
+        width: 100%;
+      }
+      #hint {
+        background-color: #36b929;
+        font-size: 16px;
+        padding: 9px;
+        border-radius: 6px;
+        border: none;
+        width: 100%;
+      }
+      #reset {
+        background-color: #f44336;
+        font-size: 16px;
+        padding: 9px;
+        border-radius: 6px;
+        border: none;
+        width: 50%;
+      }
+      input[type=text] {
+        width: 78%;
+        height: 35px;
+        padding: 4px 12px;
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 3px;
+      }
+      #tutorial {
+        background-color: #d0d0d0;
+        font-size: 16px;
+        padding: 9px;
+        border-radius: 6px;
+        border: none;
+        width: 50%;
+      }
+      #symbol1 {
+        background-color: #56a25c;
+        font-size: 20px;
+        padding: 4px 12px;
+        border-radius: 6px;
+        border: none;
+      }
+      #symbol2 {
+        background-color: #56a25c;
+        font-size: 20px;
+        padding: 4px 12px;
+        border-radius: 6px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="audio">
+      <source src="wrong.mp3" type="audio/mpeg"/>
+    </audio>
+    <noscript>Browser kamu tidak support javascript. silakan update atau ganti browser</noscript>
+    <img src="5.webp" alt="Level 5" width="346px" style="border: 2px solid black; border-radius: 2px;"/><br>
+    <label for="jawaban" style="border: 2px solid black; padding: 5px; border-radius: 4px;">Jawab :</label>
+    <input type="text" id="jawaban" placeholder="Jawab Disini..."/><br><br>
+    <button type="button" id="tombol">Jawab!</button><br>
+    <button type="button" id="hint" onclick="hint()">Hint!</button><br>
+    <input type="reset" id="reset"><button type="button" id="tutorial" onclick="tutor()">Tutorial</button><br><br><br>
+  
+    <div style="text-align: center;">
+      <button type="button" id="symbol1" onclick="document.location='4.html'"><</button><span> <b>Level 1. Page 5/5</b> </span><button type="button" id="symbol2">></button>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      document.getElementById("tombol").onclick = function(){
+        var x = document.getElementById("jawaban").value;
+        var upper = (x.toUpperCase());
+        if (upper == "POTONGAN HARGA") {
+          alert("Benar");
+        } else{
+          audio.play();
+        }
+      }
+      function hint(){
+        alert(" Hint: PO___GA_ H_RG_");
+      }
+      function tutor(){
+        alert("• Klik Input Untuk Menulis Jawaban. • Klik Jawab! Untuk Menjawab. • Klik Hint Untuk Mengetahui Sedikit Jawaban. • Klik Reset Untuk Menhapus Jawaban!");
+      }
+      var audio = document.getElementById("audio");
+    </script>
+    
+  </body>
+</html>
